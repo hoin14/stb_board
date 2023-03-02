@@ -1,13 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.List" %>
-
-<% 
-	List<Map<String, String>> list = (List<Map<String, String>>) request.getAttribute("list");
-%>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,15 +25,14 @@
 			            <th>공부내용</th>
 			            <th>등록일자</th>
 			        </tr>
-			      	
-			      	<% for(Map<String, String> map : list) {%>
-			      	<tr>
-			            <th><%=map.get("keyId")%></th>
-			            <th><%=map.get("studyDay")%></th>
-			            <th><%=map.get("contents")%></th>
-			            <th><%=map.get("regDay")%></th>
-			        </tr>
-			        <%} %>
+			      	<c:forEach var="list" items="${voList}">
+			      		<tr>
+			            <th>${list.keyId}</th>
+			            <th>${list.studyDay}</th>
+			            <th>${list.contents}</th>
+			            <th>${list.regDay}</th>
+			        	</tr>
+					</c:forEach>
     			</table>
     		</div>	
 	  	</div>

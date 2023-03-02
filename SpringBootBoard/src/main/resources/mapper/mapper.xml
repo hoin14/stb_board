@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.spring.boot.dao.StudyDao">
-	<select id="getStudyList" resultType="map">
+	
+	<select id="getStudyList_bk" resultType="map">
 		select key_id as keyId
 			   ,study_day as studyDay
 			   ,contents as contents
 			   ,reg_day as regDay
 	    from  study_record
 	</select>
+	
+	<select id="getStudyList" resultType="com.spring.boot.vo.StudyVo">
+		select key_id 
+			   ,study_day 
+			   ,contents 
+			   ,reg_day
+	    from  study_record
+	</select>
+	
 </mapper>

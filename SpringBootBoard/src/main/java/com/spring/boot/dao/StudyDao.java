@@ -1,13 +1,14 @@
 package com.spring.boot.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
+
+import com.spring.boot.vo.StudyVo;
 
 @Mapper
 public interface StudyDao {
 	
-	public List<Map<String, String>> getStudyList();
+	public List<StudyVo> getStudyList();
 	
 }
