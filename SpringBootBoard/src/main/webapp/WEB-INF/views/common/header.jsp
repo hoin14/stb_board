@@ -18,6 +18,7 @@
 	      <div class="col-md-3 text-end">
 	        <button type="button" class="btn btn-outline-primary me-2" onclick="location.href='/member/login'">Login</button>
 	        <button type="button" class="btn btn-primary" onclick="location.href='/member/signUp'">Sign-up</button>
+	        <button type="button" class="btn btn-primary" onclick="location.href='/member/login?logout'">Logout</button>
 	      </div>
 	    </header>
   	</div>

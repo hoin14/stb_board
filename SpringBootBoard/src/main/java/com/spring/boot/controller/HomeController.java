@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -25,6 +26,7 @@ public class HomeController {
 		return "/home/home";
 	}
 	
+	@PreAuthorize("hasRole('USER')")
 	@GetMapping("/study")
 	public String getStudy(HttpServletRequest request) {
 		List<StudyVo> list = new ArrayList<>();
